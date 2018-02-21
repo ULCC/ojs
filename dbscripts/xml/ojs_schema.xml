@@ -602,12 +602,14 @@
 		<index name="submission_galley_settings_galley_id">
 			<col>galley_id</col>
 		</index>
+<!--
 		<index name="submission_galley_settings_pkey">
 			<col>galley_id</col>
 			<col>locale</col>
 			<col>setting_name</col>
 			<UNIQUE/>
 		</index>
+-->
 	</table>
 
 	<!--

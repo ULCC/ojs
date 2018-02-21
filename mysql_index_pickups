@@ -1,0 +1,10 @@
+#These can be run to create indexes that the upgrade will fail on due to too long cols
+
+CREATE unique INDEX submission_galley_settings_pkey ON submission_galley_settings (galley_id, locale, setting_name(50));
+CREATE unique INDEX users_email ON users (email(100));
+CREATE unique INDEX genre_settings_pkey ON genre_settings (genre_id, locale, setting_name(100));
+CREATE unique INDEX library_file_settings_pkey ON library_file_settings (file_id, locale, setting_name(100));
+CREATE unique INDEX navigation_menu_item_settings_pkey ON navigation_menu_item_settings (navigation_menu_item_id, locale, setting_name(100));
+CREATE unique INDEX navigation_menu_item_assignment_settings_pkey ON navigation_menu_item_assignment_settings (navigation_menu_item_assignment_id, locale, setting_name(100));
+CREATE unique INDEX user_group_settings_pkey ON user_group_settings (user_group_id, locale, setting_name(100));
+CREATE unique INDEX submission_file_settings_pkey ON submission_file_settings (file_id, locale, setting_name(100));
