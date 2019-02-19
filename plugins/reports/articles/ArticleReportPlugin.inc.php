@@ -3,8 +3,8 @@
 /**
  * @file plugins/reports/articles/ArticleReportPlugin.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ArticleReportPlugin
@@ -17,13 +17,10 @@ import('lib.pkp.classes.plugins.ReportPlugin');
 
 class ArticleReportPlugin extends ReportPlugin {
 	/**
-	 * Called as a plugin is registered to the registry
-	 * @param $category String Name of category plugin was registered to
-	 * @return boolean True if plugin initialized successfully; if false,
-	 * 	the plugin will not be registered.
+	 * @copydoc Plugin::register()
 	 */
-	function register($category, $path) {
-		$success = parent::register($category, $path);
+	function register($category, $path, $mainContextId = null) {
+		$success = parent::register($category, $path, $mainContextId);
 		if ($success && Config::getVar('general', 'installed')) {
 			$this->import('ArticleReportDAO');
 			$articleReportDAO = new ArticleReportDAO();
@@ -51,7 +48,7 @@ class ArticleReportPlugin extends ReportPlugin {
 	}
 
 	/**
-	 * @copydoc ReportPlugin::display() 
+	 * @copydoc ReportPlugin::display()
 	 */
 	function display($args, $request) {
 		$journal = $request->getJournal();
@@ -77,9 +74,16 @@ class ArticleReportPlugin extends ReportPlugin {
 		import('classes.workflow.EditorDecisionActionsManager');
 		$decisionMessages = array(
 			SUBMISSION_EDITOR_DECISION_ACCEPT => __('editor.submission.decision.accept'),
-			SUBMISSION_EDITOR_DECISION_PENDING_REVISIONS => __('editor.submission.decision.pendingRevisions'),
+			SUBMISSION_EDITOR_DECISION_PENDING_REVISIONS => __('editor.submission.decision.requestRevisions'),
 			SUBMISSION_EDITOR_DECISION_RESUBMIT => __('editor.submission.decision.resubmit'),
 			SUBMISSION_EDITOR_DECISION_DECLINE => __('editor.submission.decision.decline'),
+			SUBMISSION_EDITOR_DECISION_SEND_TO_PRODUCTION => __('editor.submission.decision.sendToProduction'),
+			SUBMISSION_EDITOR_DECISION_EXTERNAL_REVIEW => __('editor.submission.decision.sendExternalReview'),
+			SUBMISSION_EDITOR_DECISION_INITIAL_DECLINE => __('editor.submission.decision.decline'),
+			SUBMISSION_EDITOR_RECOMMEND_ACCEPT => __('editor.submission.recommendation.display', array('recommendation' => __('editor.submission.decision.accept'))),
+			SUBMISSION_EDITOR_RECOMMEND_DECLINE => __('editor.submission.recommendation.display', array('recommendation' => __('editor.submission.decision.decline'))),
+			SUBMISSION_EDITOR_RECOMMEND_PENDING_REVISIONS => __('editor.submission.recommendation.display', array('recommendation' => __('editor.submission.decision.requestRevisions'))),
+			SUBMISSION_EDITOR_RECOMMEND_RESUBMIT => __('editor.submission.recommendation.display', array('recommendation' => __('editor.submission.decision.resubmit'))),
 			null => __('plugins.reports.articles.nodecision')
 		);
 

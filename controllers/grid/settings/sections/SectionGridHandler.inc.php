@@ -3,8 +3,8 @@
 /**
  * @file controllers/grid/settings/sections/SectionGridHandler.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SectionGridHandler
@@ -76,7 +76,9 @@ class SectionGridHandler extends SetupGridHandler {
 				'seq' => $section->getSequence()
 			);
 		}
-		uasort($gridData, create_function('$a,$b', 'return $a[\'seq\']-$b[\'seq\'];'));
+		uasort($gridData, function($a,$b) {
+			return $a['seq']-$b['seq'];
+		});
 
 		$this->setGridDataElements($gridData);
 

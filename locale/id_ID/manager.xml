@@ -4,8 +4,8 @@
 <!--
   * locale/id_ID/manager.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization information: https://pkp.sfu.ca/wiki/index.php?title=Translating_OxS
   * Localization strings.
@@ -108,7 +108,8 @@
 	<message key="manager.sections.wordCountInstructions">Batasi jumlah kata abstrak untuk bagian ini (0 jika tidak ada batasan):</message>
 	<message key="manager.setup">Pengaturan Jurnal</message>
 	<message key="manager.setup.masthead">Tajuk</message>
-	<message key="manager.setup.masthead.description">Sebutkan editor, direktur pelaksana, dan pihak-pihak lain yang terkait dalam struktur organisasi pelaksana jurnal.</message>
+	<message key="manager.setup.editorialTeam">Dewan Editor</message>
+	<message key="manager.setup.editorialTeam.description">Sebutkan editor, direktur pelaksana, dan pihak-pihak lain yang terkait dalam struktur organisasi pelaksana jurnal.</message>
 	<message key="manager.setup.homepageContent">Konten Beranda Jurnal</message>
 	<message key="manager.setup.homepageContentDescription">Beranda jurnal secara default terdiri dari tautan navigasi. Konten lainnya dapat ditambahkan dengan satu atau semua opsi berikut, yang akan muncul sesuai urutan.</message>
 	<message key="manager.setup.layout">Layout Jurnal</message>

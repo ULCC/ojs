@@ -4,8 +4,8 @@
 <!--
   * locale/it_IT/manager.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2000-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2000-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the it_IT (Italiano) locale.
@@ -516,7 +516,8 @@ Selezionare una delle metriche configurate come predefinita.</message>
 	<message key="plugins.importexport.common.register.success">Registrazione conclusa con successo!</message>
 	<message key="manager.website.archiving">Archiviazione</message>
 	<message key="manager.setup.masthead">Testata</message>
-	<message key="manager.setup.masthead.description">Informazioni sulla redazione</message>
+	<message key="manager.setup.editorialTeam">Editorial Team</message>
+	<message key="manager.setup.editorialTeam.description">Informazioni sulla redazione</message>
 	<message key="manager.setup.useStyleSheet">Foglio di stile</message>
 	<message key="manager.setup.contextName">Nome della rivista</message>
 	<message key="manager.setup.journalSummary">Presentazione della rivista</message>

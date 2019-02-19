@@ -4,8 +4,8 @@
 <!--
   * locale/sv_SE/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization information: https://pkp.sfu.ca/wiki/index.php?title=OJS:_Swedish_(sv_SE)
   * Localization strings.
@@ -197,6 +197,7 @@
 	<message key="user.registerForOtherJournals">Registrera för andra tidskrifter</message>
 	<message key="user.reviewerPrompt">Skulle du kunna tänka dig att granska bidrag till den här tidskriften?</message>
 	<message key="user.reviewerPrompt.userGroup">Ja, begär {$userGroup}-rollen.</message>
+	<message key="user.reviewerPrompt.optin">Ja, jag vill bli kontaktad med förfrågningar gällande granskningsuppdrag för den här tidskriften.</message>
 	<message key="user.register.contextsPrompt">Vilka av tidskrifterna på den här webbplatsen vill du registrera dig hos?</message>
 	<message key="user.register.otherContextRoles">Begär följande roller.</message>
 	<message key="user.register.noContextReviewerInterests">Om du anmälde dig som granskare, vänligen fyll i dina intresseområden.</message>
@@ -257,6 +258,7 @@
 	<message key="subscriptions.status.needsApproval">Behöver godkännas</message>
 	<message key="subscriptions.status.awaitingManualPayment">Väntar på manuell betalning</message>
 	<message key="subscriptions.status.awaitingOnlinePayment">Väntar på online-betalning</message>
+	<message key="subscriptions.status.noSubscription">Du har inte någon aktiv prenumeration.</message>
 	<message key="subscriptions.status.other">Annat, se anteckningar</message>
 	<message key="subscriptions.individualDescription">Enskilda prenumerationer kräver inloggning för att få tillgång till prenumerationsmaterial.</message>
 	<message key="subscriptions.institutionalDescription">Institutionsprenumerationer kräver inte inloggning. Användarens domän och/eller IP-adress används för att ge tillgång till prenumerationsmaterial.</message>
@@ -317,6 +319,7 @@
 	<message key="reader.openAccess">Open access</message>
 	<message key="reader.subscriptionAccess">Kräver prenumeration</message>
 	<message key="reader.subscriptionOrFeeAccess">Kräver prenumeration eller betalning</message>
+	<message key="reader.purchasePrice">({$currency} {$price})</message>
 
 	<!-- Reader Comments -->
 	<message key="comments.commentsOnArticle">Kommentarer till artikeln</message>
@@ -335,7 +338,7 @@
 	<message key="search.results.orderDir.asc">Stigande</message>
 	<message key="search.results.orderDir.desc">Fallande</message>
 	<message key="search.results.similarDocuments">liknande dokument</message>
-	
+
 	<message key="admin.auth.defaultSourceDescription"><![CDATA[<p>Att använda en annan förvald valideringskälla än OJS medför att:</p>
 <ul>
 	<li>Om en användare försöker att registrera ett nytt konto på den här sidan med ett användarnamn som redan finns hos valideringskällan (men inte i OJS-databasen) så kommer registreringen bara godkännas om lösenordet överensstämmer med det aktuella användarkontot.</li>
@@ -477,13 +480,7 @@ Du kan välja att ge användaren en förklaring till varför kontot har spärrat
 
 	<!-- Navigation sidebar menu -->
 
-	<!-- Used by editor in submission review / editing -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[Namnet länkar till granskarens profil.<br />
-Granskning sker på en skala från 1 till 5 där 5 är högsta poäng (utmärkt).<br />
-Veckor avser den genomsnittliga tiden det tar att granska ett manus.<br />
-Senaste avser datum för den senast accepterade granskningen.<br />
-Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></message>
-	
+
 
 
 
@@ -576,7 +573,6 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<!-- Used in submission editing -->
 	<message key="copyeditor.article.fileToCopyedit">Fil till Manusredaktören</message>
 	<message key="copyeditor.article.copyeditorFile">Manusredaktörens fil</message>
-	<message key="copyeditor.article.uploadedFile">Uppladdad fil</message>
 	<message key="copyeditor.article.copyeditorFinalFile">Manusredaktörens fil</message>
 
 	<!-- Proofreader -->
@@ -665,11 +661,11 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<message key="submission.comments.forEditor">För redaktör</message>
 	<message key="submission.comments.saveAndEmailAuthor">Spara och skicka e-post till författare</message>
 	<message key="submission.comments.saveAndEmailEditor">Spara och skicka e-post till redaktör</message>
-	
+
 	<!-- Registration -->
 	<message key="user.register.selectContext">Välj en tidskrift att registrera dig hos:</message>
 	<message key="user.register.noJournals">Det finns inga tidskrifter att registrera sig hos på den här webbplatsen.</message>
-	<message key="user.register.privacyStatement">Sekretesspolicy</message>
+	<message key="user.register.privacyStatement">Integritetspolicy</message>
 	<message key="user.register.registrationDisabled">Den här tidskriften tar för tillfället inte emot några registreringar.</message>
 	<message key="user.register.form.passwordLengthTooShort">Det lösenord du angivit är för kort.</message>
 	<message key="user.register.readerDescription">Meddelas via e-post när nytt nummer av tidskriften publiceras.</message>
@@ -678,6 +674,7 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<message key="user.register.reviewerDescriptionNoInterests">Kan sakkunniggranska insända bidrag för tidskriften.</message>
 	<message key="user.register.reviewerDescription">Kan sakkunniggranska bidrag för tidskrifter på webbplatsen.</message>
 	<message key="user.register.reviewerInterests">Uppge intresseområden för granskning (huvudsakliga ämnesområden och forskningsmetoder).</message>
+	<message key="user.register.form.emailConsentAllContexts">Ja, jag vill bli kontaktad med information om nya publiceringar och meddelanden för alla tidskrifter jag är registrerad hos.</message>
 
 	<!-- Subscriptions -->
 	<message key="user.subscriptions.mySubscriptions">Mina prenumerationer</message>
@@ -718,7 +715,7 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<message key="user.subscriptions.form.ipRangeValid">Skriv in ett giltigt IP-omfång.</message>
 	<message key="user.subscriptions.form.deleteIpRange">Ta bort</message>
 	<message key="user.subscriptions.form.addIpRange">Lägg till</message>
-	
+
 
 	<!-- Search -->
 	<message key="search.browseAuthorIndex">Bläddra i författarregister</message>
@@ -787,7 +784,7 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<message key="about.submissionPreparationChecklist">Checklista vid insändning av bidrag</message>
 	<message key="about.submissionPreparationChecklist.description">Som en del av insändningsprocessen måste författare kryssa för att bidraget uppfyller följande krav. Bidrag som inte uppfyller kraven kan komma att skickas tillbaka till författaren.</message>
 	<message key="about.copyrightNotice">Upphovsrättsdeklaration</message>
-	<message key="about.privacyStatement">Sekretesspolicy</message>
+	<message key="about.privacyStatement">Integritetspolicy</message>
 	<message key="about.authorFees">Författaravgifter</message>
 	<message key="about.authorFeesMessage">Den här tidskriften tillämpar följande författaravgifter.</message>
 	<message key="about.peerReviewProcess">Granskningsprocess</message>
@@ -830,7 +827,7 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<message key="payment.loginRequired.forArticle">Prenumeration eller köp av enstaka artikel krävs för att få tillgång till innehållet. Logga in på tidskriften för att verifiera prenumeration, se tidigare köp, eller för köpa enstaka artiklar.</message>
 	<message key="payment.loginRequired.forIssue">Prenumeration eller köp av enstaka nummer krävs för att få tillgång till innehållet. Logga in på tidskriften för att verifiera prenumeration, se tidigare köp, eller köpa enstaka nummer.</message>
 	<message key="payment.loginRequired.forDonation">Du måste vara inloggad för att lämna en donation.</message>
-	
+
 	<message key="payment.paid">Betalad</message>
 	<message key="payment.payNow">Betala nu</message>
 	<message key="payment.waive">Avstå</message>
@@ -839,14 +836,17 @@ Aktiva visar antalet granskningar som är förfrågade eller under arbete.]]></m
 	<message key="payment.paymentReceived">Betalning mottagen</message>
 	<message key="payment.paymentSent">Betalning har redan skickats</message>
 	<message key="payment.authorFees">Författaravgifter</message>
-	<message key="payment.type.submission">Prenumerationsavgift</message>
+	<message key="payment.type.submission">Manusavgift</message>
 	<message key="payment.type.publication">Publiceringsavgift</message>
+	<message key="payment.type.publication.required">Publiceringsavgiften ska betalas.</message>
 	<message key="payment.type.fastTrack">Avgift för snabbspår till granskning</message>
 	<message key="payment.type.membership">Avgift för individuellt medlemskap</message>
 	<message key="payment.type.purchaseArticle">Avgift för köp av enstaka artikel</message>
 	<message key="payment.type.purchaseIssue">Avgift för köp av enstaka nummer</message>
 	<message key="payment.type.subscription">Prenumerationsavgift</message>
 	<message key="payment.type.donation">Donationer</message>
+	<message key="payment.requestPublicationFee">Begär publiceringsavgift ({$feeAmount})</message>
+	<message key="payment.notFound">Betalning har begärts men begäran har förfallit. Kontakta tidskriftsansvarig för mer information.</message>
 
 	<message key="payment.donation.makeDonation">Donera</message>
 
@@ -1026,7 +1026,7 @@ Sök-URL:er som kräver inskickade formulärdata kan komma att visas som ogiltig
 
 
 
-	
+
 	<message key="rt.beNotifiedWhen">Få avisering när ...</message>
 
 	<message key="rt.thisJournal">Sök tidskrift</message>
@@ -1034,11 +1034,9 @@ Sök-URL:er som kräver inskickade formulärdata kan komma att visas som ogiltig
 
 	<message key="rt.context.authorTermsDescription">För material med fler än en författare, lämna samtliga namn markerade för att söka på arbeten av samma medförfattare, eller sök på en författare i taget genom att markera bara ett namn. För ytterligare information om resurserna sökningen sker i, se OM. De här resurserna är valda utifrån sin relevans och fria tillgång till hela eller delar av innehållet.</message>
 
-	
+
 
 	<!-- Notification Types -->
-	<message key="notification.mailListDescription">Skriv in din e-postadress för att få aviseringar direkt när det läggs till nytt viktigt innehåll i tidskriften.</message>
-	<message key="notification.notificationsPublicDescription">Den här sidan visar viktiga uppdateringar relaterade till den här tidskriften, exempelvis nya nummer eller meddelanden. Du kan prenumerera på dessa aviseringar via RSS-flöden (genom att klicka på ikonerna till höger), eller <![CDATA[  <a href="{$emailUrl}">via e-post.</a>]]></message>
 
 	<message key="notification.type.articleSubmitted">En ny artikel, "{$title}", har skickats in.</message>
 	<message key="notification.type.editing">Redaktionella händelser</message>
@@ -1058,7 +1056,7 @@ Sök-URL:er som kräver inskickade formulärdata kan komma att visas som ogiltig
 	<message key="notification.type.assignProductionUser">Låt en användare skapa publiceringsversioner genom att använda Lägg till-länken i Deltagarlistan.</message>
 	<message key="notification.type.awaitingRepresentations">Väntar på publiceringsversioner.</message>
 	<message key="notification.type.publicationScheduled">Det här bidraget är inlagt för publicering.</message>
-	
+
 	<!--
 	 *
 	 * MISC - Entries that do not belong in the other sections.
@@ -1082,7 +1080,7 @@ Sök-URL:er som kräver inskickade formulärdata kan komma att visas som ogiltig
 	<!-- Included here because it may be used in the navigation bar -->
 	<message key="editor.navigation.issues">Nummer</message>
 
-	<message key="notification.type.approveSubmission">Det här bidraget väntar för närvarande på godkännande innan det blir synligt i numret.</message>
+	<message key="notification.type.approveSubmission">Det här bidraget väntar för närvarande på godkännande innan det kommer att synas i numret.</message>
 	<message key="notification.type.approveSubmissionTitle">Väntar på godkännande.</message>
 
 	<message key="user.profile.form.showOtherContexts">Registrera dig hos andra tidskrifter</message>
@@ -1094,11 +1092,14 @@ Sök-URL:er som kräver inskickade formulärdata kan komma att visas som ogiltig
 	<message key="grid.catalogEntry.approvedRepresentation.title">Godkännande av publiceringsversion</message>
 	<message key="grid.catalogEntry.approvedRepresentation.message"><![CDATA[<p>Godkänn den här publiceringsversionen för publicering.</p>]]></message>
 	<message key="grid.catalogEntry.approvedRepresentation.removeMessage"><![CDATA[<p>Ta tillbaka godkännande för den här publiceringsversionen.</p>]]></message>
-	<message key="search.cli.rebuildIndex.indexing">Indexering "{$journalName}"</message>
+	<message key="search.cli.rebuildIndex.indexing">Indexerar "{$journalName}"</message>
 	<message key="search.cli.rebuildIndex.indexingByJournalNotSupported">Den här sökfunktionaliteten tillåter inte omindexering per tidskrift.</message>
 	<message key="search.cli.rebuildIndex.unknownJournal">Angiven sökväg för tidskrift, "{$journalPath}", kunde inte knytas till någon tidskrift.</message>
 
 	<message key="editor.issues.backIssues">Publicerade nummer</message>
 	<message key="editor.issues.futureIssues">Kommande nummer</message>
 	<message key="navigation.subscriptions">Prenumerationer</message>
+
+	<!-- legacy strings from OJS 2, for upgraded installations from OJS 2 -->
+	<message key="log.editor.submissionExpedited">{$editorName} har tagit hand om redigeringsprocessen för artikeln {$submissionId}.</message>
 </locale>

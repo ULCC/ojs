@@ -3,8 +3,8 @@
 /**
  * @file controllers/tab/issueEntry/IssueEntryTabHandler.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IssueEntryTabHandler
@@ -122,6 +122,8 @@ class IssueEntryTabHandler extends PublicationEntryTabHandler {
 		$form->readInputData();
 		if($form->validate($request)) {
 			$form->execute($request);
+			// submission changed, so get it again
+			$submission = $form->getSubmission();
 			// Log the event
 			import('lib.pkp.classes.log.SubmissionLog');
 			import('classes.log.SubmissionEventLogEntry'); // Log consts
@@ -140,10 +142,12 @@ class IssueEntryTabHandler extends PublicationEntryTabHandler {
 			// Display assign public identifiers form
 			$assignPubIds = false;
 			$pubIdPlugins = PluginRegistry::loadCategory('pubIds', true);
-			foreach ($pubIdPlugins as $pubIdPlugin) {
-				if ($pubIdPlugin->isObjectTypeEnabled('Submission', $submission->getContextId())) {
-					$assignPubIds = true;
-					break;
+			if (is_array($pubIdPlugins)) {
+				foreach ($pubIdPlugins as $pubIdPlugin) {
+					if ($pubIdPlugin->isObjectTypeEnabled('Submission', $submission->getContextId())) {
+						$assignPubIds = true;
+						break;
+					}
 				}
 			}
 			if ($assignPubIds) {

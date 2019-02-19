@@ -1,15 +1,15 @@
 {**
  * plugins/generic/htmlArticleGalley/display.tpl
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Embedded viewing of a HTML galley.
  *}
 <!DOCTYPE html>
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
-{translate|assign:"pageTitleTranslated" key="article.pageTitle title=$article->getLocalizedTitle()}
+{translate|assign:"pageTitleTranslated" key="article.pageTitle" title=$article->getLocalizedTitle()}
 {include file="frontend/components/headerHead.tpl"}
 <body class="pkp_page_{$requestedPage|escape} pkp_op_{$requestedOp|escape}">
 

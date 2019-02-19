@@ -3,8 +3,8 @@
 /**
  * @file classes/subscription/form/SubscriptionPolicyForm.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SubscriptionPolicyForm
@@ -14,7 +14,7 @@
  */
 
 define('SUBSCRIPTION_OPEN_ACCESS_DELAY_MIN', '1');
-define('SUBSCRIPTION_OPEN_ACCESS_DELAY_MAX', '24');
+define('SUBSCRIPTION_OPEN_ACCESS_DELAY_MAX', '60');
 define('SUBSCRIPTION_EXPIRY_REMINDER_BEFORE_MONTHS_MIN', '1');
 define('SUBSCRIPTION_EXPIRY_REMINDER_BEFORE_MONTHS_MAX', '12');
 define('SUBSCRIPTION_EXPIRY_REMINDER_BEFORE_WEEKS_MIN', '1');

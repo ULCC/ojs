@@ -4,8 +4,8 @@
 <!--
   * locale/ru_RU/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization information: https://pkp.sfu.ca/wiki/index.php?title=OJS:_Russian_(ru_RU)
   * Localization strings.
@@ -197,6 +197,7 @@
 	<message key="user.registerForOtherJournals">Зарегистрировать для других журналов</message>
 	<message key="user.reviewerPrompt">Хотите ли вы рецензировать материалы для этого журнала?</message>
 	<message key="user.reviewerPrompt.userGroup">Да, запросить роль «{$userGroup}».</message>
+	<message key="user.reviewerPrompt.optin">Да, Я хочу, чтобы ко мне обращались с запросами на рецензирование материалов для этого журнала.</message>
 	<message key="user.register.contextsPrompt">В каких журналах на этом сайте вы хотите зарегистрироваться?</message>
 	<message key="user.register.otherContextRoles">Запросить следующие роли.</message>
 	<message key="user.register.noContextReviewerInterests">Если вы запрашиваете роль рецензента в каком-то журнале, пожалуйста, введите темы, которые интересуют Вас как рецензента.</message>
@@ -370,13 +371,13 @@
 	<message key="plugins.categories.auth.description">Модули авторизации позволяют Open Journal Systems делегировать задачу аутентификации пользователей другим системам, таким как LDAP-сервера.</message>
 	<message key="plugins.categories.generic.description">Общие модули используются для расширения возможностей Open Journal Systems различными способами, которые не поддерживаются другими категориями модулей.</message>
 
-	<message key="manager.setup.lockssDescription"><![CDATA[Open Journal Systems поддерживает систему <a href="http://www.lockss.org/" target="_blank">LOCKSS</a> (Lots of Copies Keep Stuff Safe), чтобы быть уверенным в безопасном и постоянном архиве для журнала. LOCKSS — открытое (open source) программное обеспечение, разработанное в библиотеке Стэнфордского университета, которое позволяет библиотекам сохранять выбранные веб-журналы регулярно проверяя веб-сайты зарегистрированных журналов на предмет нового опубликованного контента и архивируя его. Каждый архив постоянно сверяется с кэшами других библиотек, и если контент оказывается поврежденным или утраченным, для его восстановления используются другие кэши или сам журнал.
-<br /><br />
-Настраивать поддержку LOCKSS для Open Journal Systems нужно только после того как журнал будет полностью опубликован, для этого нужно выполнить следующие два шага:]]></message>
+	<message key="manager.setup.lockssDescription">
+	<![CDATA[Open Journal Systems поддерживает систему LOCKSS (Lots of Copies Keep Stuff Safe), чтобы быть уверенным в безопасном и постоянном архиве для контента журнала. Если ваш журнал принят для архивирования контента в глобальную сеть LOCKSS или участвует в частной сети LOCKSS помимо PKP PN, включите здесь необходимые настройки:
+]]></message>
 
-	<message key="manager.setup.clockssDescription"><![CDATA[Open Journal Systems также поддерживает систему <a href="http://clockss.org/" target="_blank">CLOCKSS</a> (Controlled Lots of Copies Keep Stuff Safe), чтобы быть уверенным в безопасном и постоянном архиве для журнала. CLOCKSS основана на открытом (open source) программном обеспечении LOCKSS, разработанном в библиотеке Стэнфордского университета, которое позволяет библиотекам сохранять выбранные веб-журналы регулярно проверяя веб-сайты зарегистрированных журналов на предмет нового опубликованного контента и архивируя его. Каждый архив постоянно сверяется с кэшами других библиотек, и если контент оказывается поврежденным или утраченным, для его восстановления используются другие кэши или сам журнал.
-<br /><br />
-Настраивать поддержку CLOCKSS support для Open Journal Systems нужно только после того как журнал будет полностью опубликован.]]></message>
+	<message key="manager.setup.clockssDescription"><![CDATA[Open Journal Systems также поддерживает систему CLOCKSS (Controlled Lots of Copies Keep Stuff Safe), чтобы быть уверенным в безопасном и постоянном архиве для журнала. Если ваш журнал подписал контракт с архивом CLOCKSS, включите здесь необходимые настройки:]]></message>
+
+	<message key="manager.setup.porticoDescription"><![CDATA[Portico — это некоммерческий сервис, предназначенный для сохранения цифровых публикаций, в том числе электронных журналов, книг и оцифрованных исторических коллекций. Если ваш журнал подписал контракт с Portico, включите здесь необходимые настройки:]]></message>
 
 	<!-- Настройка (Шаг 3) -->
 	<message key="manager.setup.authorCopyrightNotice.sample"><![CDATA[<h3>Примеры уведомлений о передаче авторских прав на основе лицензии Creative Commons</h3>
@@ -480,11 +481,6 @@
 	<!-- Меню навигации боковой панели -->
 
 	<!-- Используются редактором в процессе рецензирования / редактирования материала -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[Имя является ссылкой на профиль рецензента.<br />
-Высшая оценка в рейтинге — 5 (Отлично).<br />
-Недель — показывает средний срок выполнения рецензии рецензентом.<br />
-Последняя — дата последней принятой рецензии от данного рецензента,<br />
-Активны — количество рецензий, запросы на которые сейчас рассматривает или выполняет рецензент.]]></message>
 
 
 
@@ -578,7 +574,6 @@
 	<!-- Используются в редактировании материала -->
 	<message key="copyeditor.article.fileToCopyedit">Файл для литературного редактирования</message>
 	<message key="copyeditor.article.copyeditorFile">Файл литературного редактора</message>
-	<message key="copyeditor.article.uploadedFile">Загруженный файл</message>
 	<message key="copyeditor.article.copyeditorFinalFile">Файл литературного редактора</message>
 
 	<!-- Корректор -->
@@ -680,6 +675,10 @@
 	<message key="user.register.reviewerDescriptionNoInterests">Согласен участвовать в рецензировании материалов для этого журнала.</message>
 	<message key="user.register.reviewerDescription">Согласен участвовать в рецензировании материалов для этого сайта.</message>
 	<message key="user.register.reviewerInterests">Укажите Ваши интересы как рецензента (основная тематика, методы исследования):</message>
+	<message key="user.register.form.emailConsentAllContexts">Да, я хочу, чтобы меня уведомляли о новых публикациях и объявлениях во всех журналах, в которых я зарегистрирован.</message>
+	<message key="user.register.form.privacyConsentThisContext"><![CDATA[Да, я даю согласие на сбор и хранение моих данных в рамках <a href="{$privacyUrl}" target="_blank">политики конфиденциальности</a> этого журнала.]]></message>
+	<message key="user.register.form.missingContextConsent">Вы должны согласиться с политикой конфиденциальности любого журнала, в котором вы регистрируетесь.</message>
+	<message key="user.register.form.missingSiteConsent">Вы должны согласиться с политикой конфиденциальности этого сайта.</message>
 
 	<!-- Подписки -->
 	<message key="user.subscriptions.mySubscriptions">Мои подписки</message>
@@ -1039,8 +1038,6 @@
 
 
 	<!-- Типы уведомлений -->
-	<message key="notification.mailListDescription">Введите ваш адрес электронной почты, чтобы моментально получать уведомления о добавлении нового контента в журнал.</message>
-	<message key="notification.notificationsPublicDescription">На этой странице показан список важных обновлений, связанных с этим журналом, таких как выход новых выпусков или объявления. Вы можете подписаться на эти уведомления через ленты RSS (щелкнув на значках справа) или <![CDATA[  <a href="{$emailUrl}">по электронной почте.</a>]]></message>
 
 	<message key="notification.type.articleSubmitted">Новая статья «{$title}» была отправлена.</message>
 	<message key="notification.type.editing">События редактирования</message>
@@ -1055,6 +1052,7 @@
 	<message key="notification.type.submissionComment">Редактор оставил комментарий к «{$title}».</message>
 	<message key="notification.type.submissions">События процесса отправки</message>
 	<message key="notification.type.userComment">Читатель добавил комментарий к «{$title}»</message>
+	<message key="notification.type.public">Публичные объявления</message>
 	<message key="notification.savedIssueMetadata">Сохранены метаданные публикации выпуска.</message>
 	<message key="notification.type.editorAssignmentTask">Была отправлена новая статья, которой нужно назначить редактора.</message>
 	<message key="notification.type.assignProductionUser">Назначить пользователя для создания гранок с помощью ссылки «Назначить» в списке «Участники».</message>
@@ -1103,4 +1101,7 @@
 	<message key="editor.issues.backIssues">Прошлые выпуски</message>
 	<message key="editor.issues.futureIssues">Будущие выпуски</message>
 	<message key="navigation.subscriptions">Подписки</message>
+
+	<!-- устаревшие строки из OJS 2 для систем, которые были обновлены с OJS 2 -->
+	<message key="log.editor.submissionExpedited">Редактор {$editorName} взялся за процесс редактирования по статье {$submissionId}.</message>
 </locale>

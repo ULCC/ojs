@@ -3,8 +3,8 @@
 #
 # tools/buildpkg.sh
 #
-# Copyright (c) 2014-2017 Simon Fraser University
-# Copyright (c) 2003-2017 John Willinsky
+# Copyright (c) 2014-2018 Simon Fraser University
+# Copyright (c) 2003-2018 John Willinsky
 # Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
 #
 # Script to create an OJS package for distribution.
@@ -54,7 +54,6 @@ plugins/importexport/sample								\
 plugins/importexport/duracloud								\
 plugins/reports/subscriptions								\
 plugins/blocks/relatedItems								\
-plugins/oaiMetadataFormats/jats								\
 tests											\
 lib/pkp/tests										\
 .git											\
@@ -80,7 +79,6 @@ plugins/generic/citationStyleLanguage/lib/vendor/symfony/debug/				\
 plugins/generic/citationStyleLanguage/lib/vendor/symfony/console/Tests/			\
 plugins/paymethod/paypal/vendor/symfony/http-foundation/Tests/				\
 plugins/paymethod/paypal/vendor/symfony/event-dispatcher/				\
-plugins/paymethod/paypal/vendor/guzzle/guzzle/tests/Guzzle/Tests/			\
 plugins/generic/citationStyleLanguage/lib/vendor/symfony/filesystem/Tests/		\
 plugins/generic/citationStyleLanguage/lib/vendor/symfony/stopwatch/Tests/		\
 plugins/generic/citationStyleLanguage/lib/vendor/symfony/event-dispatcher/Tests/	\

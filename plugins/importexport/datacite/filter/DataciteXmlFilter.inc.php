@@ -3,8 +3,8 @@
 /**
  * @file plugins/importexport/datacite/filter/DataciteXmlFilter.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2000-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2000-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DataciteXmlFilter
@@ -349,8 +349,14 @@ class DataciteXmlFilter extends NativeExportFilter {
 				$submittedDate = $article->getDateSubmitted();
 				if (!empty($submittedDate)) {
 					$dates[DATACITE_DATE_SUBMITTED] = $submittedDate;
-					// Default accepted date: submitted date.
-					$dates[DATACITE_DATE_ACCEPTED] = $submittedDate;
+				}
+				// Accepted date: the last editor accept decision date
+				$editDecisionDao = DAORegistry::getDAO('EditDecisionDAO');
+				$editDecisions = $editDecisionDao->getEditorDecisions($article->getId());
+				foreach (array_reverse($editDecisions) as $editDecision) {
+					if ($editDecision['decision'] == SUBMISSION_EDITOR_DECISION_ACCEPT) {
+						$dates[DATACITE_DATE_ACCEPTED] = $editDecision['dateDecided'];
+					}
 				}
 				// Last modified date (for articles): last$lastModifiede.
 				$lastModified = $article->getLastModified();

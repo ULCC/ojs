@@ -4,8 +4,8 @@
 <!--
   * locale/ar_IQ/manager.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -109,7 +109,8 @@
 	<message key="manager.sections.wordCountInstructions">قيد عدد كلمات الملخص في هذا القسم (الصفر يعني بلا قيد):</message>
 	<message key="manager.setup">التهيئة</message>
 	<message key="manager.setup.masthead">طاقم المجلة</message>
-	<message key="manager.setup.masthead.description">قائمة بالمحررين، المدراء وغيرهم من الشخصيات المرتبطة بالمجلة.</message>
+	<message key="manager.setup.editorialTeam">هيئة التحرير</message>
+	<message key="manager.setup.editorialTeam.description">قائمة بالمحررين، المدراء وغيرهم من الشخصيات المرتبطة بالمجلة.</message>
 	<message key="manager.setup.homepageContent">محتوى الصفحة الرئيسية للمجلة</message>
 	<message key="manager.setup.homepageContentDescription">الصفحة الرئيسية للمجلة تشتمل إفتراضياً على روابط التنقل. يمكن إلحاق محتويات إضافية في الصفحة الرئيسية باستعمال واحد أو أكثر من الخيارات الآتية والتي ستظهر حسب ترتيبها المعروض أدناه.</message>
 	<message key="manager.setup.layout">تصميم المجلة</message>

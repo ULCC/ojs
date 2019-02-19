@@ -4,8 +4,8 @@
 <!--
   * locale/sv_SE/emailTemplates.xml
   *
-  * Copyright (c) 2014-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2014-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization information: https://pkp.sfu.ca/wiki/index.php?title=OJS:_Swedish_(sv_SE)
   * Localized email templates XML file.
@@ -23,31 +23,6 @@ Länk: {$url}<br />
 {$principalContactSignature}]]></body>
 		<description>Det här e-postmeddelandet skickas till registrerade användare som har valt att få den här typen av aviseringar skickade till sig via e-post.</description>
 	</email_text>
-	<email_text key="NOTIFICATION_MAILLIST">
-		<subject>Ny avisering från {$siteTitle}</subject>
-		<body><![CDATA[Du har en ny avisering från  {$siteTitle}:<br />
---<br />
-{$notificationContents}<br />
-<br />
-Länk: {$url}<br />
---<br />
-<br />
-Om du inte vill få dessa aviseringsmail längre, gå till {$unsubscribeLink}.<br />
-<br />
-{$principalContactSignature}]]></body>
-		<description>Det här e-postmeddelandet skickas till oregistrerade användare som står med på e-postlistan för aviseringar.</description>
-	</email_text>
-	<email_text key="NOTIFICATION_MAILLIST_WELCOME">
-		<subject>Välkommen till e-postlistan för {$siteTitle}!</subject>
-		<body><![CDATA[Du har registrerat dig för att få aviseringar från {$siteTitle}.<br />
-<br />
-Klicka på den här länken för att bekräfta din anmälan och lägga till din e-postadress till e-postlistan: {$confirmLink}<br />
-<br />
-Om du inte vill få aviseringar längre, gå till {$unsubscribeLink}.<br />
-<br />
-{$principalContactSignature}]]></body>
-		<description>Det här e-postmeddelandet skickas till oregistrerade användare som enbart registrerat sig för aviseringar via e-postlistan.</description>
-	</email_text>    
 	<email_text key="PASSWORD_RESET_CONFIRM">
 		<subject>Bekräfta återställning av lösenord</subject>
 		<body><![CDATA[Vi har mottagit en begäran om att återställa ditt lösenord för webbplatsen {$siteTitle}.<br />
@@ -174,14 +149,6 @@ Om du har några frågor, vänligen kontakta mig. Tack för att du har valt att 
 {$editorialContactSignature}]]></body>
 		<description>Det här e-postmeddelandet skickas, om det är aktiverat, automatiskt till andra författare knutna till bidraget i inskickningsprocessen men som inte är OJS-användare.</description>
 	</email_text>
-	<email_text key="SUBMISSION_UNSUITABLE">
-		<subject>Bidrag motsvarar inte tidskriftens profil</subject>
-		<body><![CDATA[{$authorName}:<br />
-<br />
-En första redaktionell granskning &quot;{$submissionTitle}&quot; har visat att det här bidraget inte överensstämmer med tidskriften {$contextName}s ämnesfokus. Jag rekommenderar att du tar del av beskrivningen av tidskriften under Om liksom tidskriftens hittills publicerade material för att få en bild av vilken typ av innehåll vi publicerar. Du kan också överväga att skicka manuskriptet till en annan, mer passande, tidskrift.<br />
-<br />
-{$editorialContactSignature}]]></body>
-	</email_text>
 	<email_text key="EDITOR_ASSIGN">
 		<subject>Redaktionellt uppdrag</subject>
 		<body><![CDATA[{$editorialContactName}:<br />
@@ -289,7 +256,7 @@ Tack för att du överväger granskningsuppdraget.<br />
 		<subject>Förfrågan om granskning av artikel</subject>
 		<body><![CDATA[{$reviewerName}:<br />
 <br />
-Jag tror att du skulle passa utmärkt som sakkunniggranskare av manuskriptet &quot;{$submissionTitle}&quot; och detta är en förfrågan om du skulle vara villig att ta dig an den här viktiga uppgiften åt oss. Tidskriftens Riktlinjer för granskare bifogas här nedan, och bidraget finns som bilaga i det här e-postmeddelandet. Din bedömning av bidraget ska tillsammans med din rekommendation skickas per e-post till mig senast {$reviewDueDate}.<br />		
+Jag tror att du skulle passa utmärkt som sakkunniggranskare av manuskriptet &quot;{$submissionTitle}&quot; och detta är en förfrågan om du skulle vara villig att ta dig an den här viktiga uppgiften åt oss. Tidskriftens Riktlinjer för granskare bifogas här nedan, och bidraget finns som bilaga i det här e-postmeddelandet. Din bedömning av bidraget ska tillsammans med din rekommendation skickas per e-post till mig senast {$reviewDueDate}.<br />
 <br />
 Vänligen meddela mig genom att svara på det här meddelandet senast {$responseDueDate} om du har möjlighet att åta dig uppdraget eller inte.<br />
 <br />
@@ -796,7 +763,7 @@ Manusredaktör, {$contextName}<br />
 	</email_text>
 	<email_text key="REVISED_VERSION_NOTIFY">
 		<subject>Reviderad version uppladdad</subject>
-		<body><![CDATA[{$editorialContactName}:<br />
+		<body><![CDATA[Redaktörer:<br />
 <br />
 En reviderad version av &quot;{$submissionTitle}&quot; har laddats upp av författaren, {$authorName}.<br />
 <br />

@@ -3,8 +3,8 @@
 /**
  * @file api/v1/submission/SubmissionHandler.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SubmissionHandler
@@ -42,6 +42,16 @@ class SubmissionHandler extends APIHandler {
 					'handler' => array($this, 'getGalleys'),
 					'roles' => $roles
 				),
+				array(
+					'pattern' => $this->getEndpointPattern() . '/{submissionId}/participants',
+					'handler' => array($this, 'getParticipants'),
+					'roles' => array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR),
+				),
+				array(
+					'pattern' => $this->getEndpointPattern() . '/{submissionId}/participants/{stageId}',
+					'handler' => array($this, 'getParticipants'),
+					'roles' => array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR),
+				),
 			),
 		);
 		parent::__construct();
@@ -54,11 +64,14 @@ class SubmissionHandler extends APIHandler {
 		$routeName = null;
 		$slimRequest = $this->getSlimRequest();
 
+		import('lib.pkp.classes.security.authorization.ContextAccessPolicy');
+		$this->addPolicy(new ContextAccessPolicy($request, $roleAssignments));
+
 		if (!is_null($slimRequest) && ($route = $slimRequest->getAttribute('route'))) {
 			$routeName = $route->getName();
 		}
 
-		if ($routeName === 'getSubmission' || $routeName === 'getGalleys') {
+		if ($routeName === 'getSubmission' || $routeName === 'getGalleys' || $routeName === 'getParticipants') {
 			import('lib.pkp.classes.security.authorization.SubmissionAccessPolicy');
 			$this->addPolicy(new SubmissionAccessPolicy($request, $args, $roleAssignments));
 		}
@@ -89,8 +102,9 @@ class SubmissionHandler extends APIHandler {
 
 		// Prevent users from viewing submissions they're not assigned to,
 		// except for journal managers and admins.
-		if (!$currentUser->hasRole(array(ROLE_ID_MANAGER, ROLE_ID_SITE_ADMIN), $context->getId())
-				&& $params['assignedTo'] != $currentUser->getId()) {
+		$userRoles = $this->getAuthorizedContextObject(ASSOC_TYPE_USER_ROLES);
+		$canAccessUnassignedSubmission = !empty(array_intersect(array(ROLE_ID_SITE_ADMIN, ROLE_ID_MANAGER), $userRoles));
+		if (!$canAccessUnassignedSubmission && $params['assignedTo'] != $currentUser->getId()) {
 			return $response->withStatus(403)->withJsonError('api.submissions.403.requestedOthersUnpublishedSubmissions');
 		}
 
@@ -107,7 +121,7 @@ class SubmissionHandler extends APIHandler {
 		}
 
 		$data = array(
-			'maxItems' => $submissionService->getSubmissionsMaxCount($context->getId(), $params),
+			'itemsMax' => $submissionService->getSubmissionsMaxCount($context->getId(), $params),
 			'items' => $items,
 		);
 
@@ -187,6 +201,49 @@ class SubmissionHandler extends APIHandler {
 	}
 
 	/**
+	 * Get the participants assigned to a submission
+	 *
+	 * This does not return reviewers.
+	 *
+	 * @param $slimRequest Request Slim request object
+	 * @param $response Response object
+	 * @param array $args arguments
+	 *
+	 * @return Response
+	 */
+	public function getParticipants($slimRequest, $response, $args) {
+		$request = $this->getRequest();
+		$context = $request->getContext();
+		$submission = $this->getAuthorizedContextObject(ASSOC_TYPE_SUBMISSION);
+		$stageId = isset($args['stageId']) ? $args['stageId'] : null;
+
+		if (!$submission) {
+			return $response->withStatus(404)->withJsonError('api.submissions.404.resourceNotFound');
+		}
+
+		$data = array();
+
+		$userService = ServicesContainer::instance()->get('user');
+
+		$users = $userService->getUsers($context->getId(), array(
+			'count' => 100, // high upper-limit
+			'assignedToSubmission' => $submission->getId(),
+			'assignedToSubmissionStage' => $stageId,
+		));
+		if (!empty($users)) {
+			$args = array(
+				'request' => $request,
+				'slimRequest' => $slimRequest,
+			);
+			foreach ($users as $user) {
+				$data[] = $userService->getSummaryProperties($user, $args);
+			}
+		}
+
+		return $response->withJson($data, 200);
+	}
+
+	/**
 	 * Convert params passed to list requests. Coerce type and only return
 	 * white-listed params.
 	 *
@@ -205,13 +262,13 @@ class SubmissionHandler extends APIHandler {
 			'offset' => 0,
 		);
 
-		$requestParams = array_merge($defaultParams, $slimRequest->getQueryParams());
-
-		// Anyone not a manager or site admin can only access their assigned
-		// submissions
-		if (!$currentUser->hasRole(array(ROLE_ID_MANAGER, ROLE_ID_SITE_ADMIN), $context->getId())) {
-			$requestParams['assignedTo'] = $currentUser->getId();
+		$userRoles = $this->getAuthorizedContextObject(ASSOC_TYPE_USER_ROLES);
+		$canAccessUnassignedSubmission = !empty(array_intersect(array(ROLE_ID_SITE_ADMIN, ROLE_ID_MANAGER), $userRoles));
+		if (!$canAccessUnassignedSubmission) {
+			$defaultParams['assignedTo'] = $currentUser->getId();
 		}
+
+		$requestParams = array_merge($defaultParams, $slimRequest->getQueryParams());
 
 		$returnParams = array();
 

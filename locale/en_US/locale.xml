@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization information: https://pkp.sfu.ca/wiki/index.php?title=Translating_OxS
   * Localization strings.
@@ -197,6 +197,7 @@
 	<message key="user.registerForOtherJournals">Register for Other Journals</message>
 	<message key="user.reviewerPrompt">Would you be willing to review submissions to this journal?</message>
 	<message key="user.reviewerPrompt.userGroup">Yes, request the {$userGroup} role.</message>
+	<message key="user.reviewerPrompt.optin">Yes, I would like to be contacted with requests to review submissions to this journal.</message>
 	<message key="user.register.contextsPrompt">Which journals on this site would you like to register with?</message>
 	<message key="user.register.otherContextRoles">Request the following roles.</message>
 	<message key="user.register.noContextReviewerInterests">If you requested to be a reviewer on any journal, please enter your subject interests.</message>
@@ -375,7 +376,7 @@
 ]]></message>
 
 	<message key="manager.setup.clockssDescription"><![CDATA[Open Journal Systems also supports the CLOCKSS (Controlled Lots of Copies Keep Stuff Safe) system to ensure a secure and permanent archive for the journal. If your journal signed a contract with the CLOCKSS Archive, enable it here:]]></message>
-	
+
 	<message key="manager.setup.porticoDescription"><![CDATA[Portico is a not-for-profit service committed to the preservation of digital publications, including e-journals, e-books, and digitized historical collections. If your journal signed a contract with Portico, enable it here:]]></message>
 
 	<!-- Setup Step 3 -->
@@ -479,12 +480,6 @@ You may optionally provide the user with a reason for disabling their account.</
 
 	<!-- Navigation sidebar menu -->
 
-	<!-- Used by editor in submission review / editing -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[Name links to reviewer's profile.<br/>
-Ratings is out of 5 (Excellent).<br/>
-Weeks refers to average period of time to complete a review.<br/>
-Latest is date of most recently accepted review.<br/>
-Active is how many reviews are currently being considered or underway.]]></message>
 
 
 
@@ -578,7 +573,6 @@ Active is how many reviews are currently being considered or underway.]]></messa
 	<!-- Used in submission editing -->
 	<message key="copyeditor.article.fileToCopyedit">File To C/E</message>
 	<message key="copyeditor.article.copyeditorFile">Copyeditor File</message>
-	<message key="copyeditor.article.uploadedFile">Uploaded File</message>
 	<message key="copyeditor.article.copyeditorFinalFile">Copyeditor File</message>
 
 	<!-- Proofreader -->
@@ -680,6 +674,10 @@ Active is how many reviews are currently being considered or underway.]]></messa
 	<message key="user.register.reviewerDescriptionNoInterests">Willing to conduct peer review of submissions to the journal.</message>
 	<message key="user.register.reviewerDescription">Willing to conduct peer review of submissions to the site.</message>
 	<message key="user.register.reviewerInterests">Identify reviewing interests (substantive areas and research methods):</message>
+	<message key="user.register.form.emailConsentAllContexts">Yes, I would like to be notified of new publications and announcements for all journals that I registered with.</message>
+	<message key="user.register.form.privacyConsentThisContext"><![CDATA[Yes, I agree to have my data collected and stored according to this journal's <a href="{$privacyUrl}" target="_blank">privacy statement</a>.]]></message>
+	<message key="user.register.form.missingContextConsent">You must consent to the privacy statement for any journal with which you are registering.</message>
+	<message key="user.register.form.missingSiteConsent">You must consent to this site's privacy statement.</message>
 
 	<!-- Subscriptions -->
 	<message key="user.subscriptions.mySubscriptions">My Subscriptions</message>
@@ -1042,8 +1040,6 @@ Validation may fail on search URLs that require posted form data.]]></message>
 
 
 	<!-- Notification Types -->
-	<message key="notification.mailListDescription">Enter your email address to receive immediate notifications of important new content added to the journal.</message>
-	<message key="notification.notificationsPublicDescription">This page shows important updates associated with this journal such as new issues or announcements.  You may subscribe to these notifications through RSS feeds (by clicking on the images to the right), or <![CDATA[  <a href="{$emailUrl}">through email.</a>]]></message>
 
 	<message key="notification.type.articleSubmitted">A new article, "{$title}", has been submitted.</message>
 	<message key="notification.type.editing">Editing Events</message>
@@ -1058,6 +1054,7 @@ Validation may fail on search URLs that require posted form data.]]></message>
 	<message key="notification.type.submissionComment">An editor has made a comment on "{$title}."</message>
 	<message key="notification.type.submissions">Submission Events</message>
 	<message key="notification.type.userComment">A reader has made a comment on "{$title}"</message>
+	<message key="notification.type.public">Public Announcements</message>
 	<message key="notification.savedIssueMetadata">Issue publication metadata saved.</message>
 	<message key="notification.type.editorAssignmentTask">A new article has been submitted to which an editor needs to be assigned.</message>
 	<message key="notification.type.assignProductionUser">Assign a user to create galleys using the Assign link in the Participants list.</message>

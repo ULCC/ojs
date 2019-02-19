@@ -1,8 +1,8 @@
 {**
  * templates/payments/subscriptionTypeForm.tpl
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Subscription type form under journal management.
@@ -28,16 +28,16 @@
 	{/fbvFormSection}
 
 	{fbvFormSection label="manager.subscriptionTypes.form.description"}
-		{fbvElement type="textarea" name="description" id="description" value=$description rich=true}
+		{fbvElement type="textarea" name="description" id="description" value=$description rich=true multilingual=true}
 	{/fbvFormSection}
 
 	{fbvFormSection title="manager.subscriptionTypes.form.cost"}
-		{fbvElement type="select" required=true name="currency" id="currency" value=$currency from=$validCurrencies label="manager.subscriptionTypes.form.currency" size=$fbvStyles.size.SMALL inline=true translate=false}
+		{fbvElement type="select" required=true name="currency" id="currency" selected=$currency from=$validCurrencies label="manager.subscriptionTypes.form.currency" size=$fbvStyles.size.SMALL inline=true translate=false}
 		{fbvElement type="text" required=true name="cost" id="cost" value=$cost label="manager.subscriptionTypes.form.cost" description="manager.subscriptionTypes.form.costInstructions" size=$fbvStyles.size.SMALL inline=true}
 	{/fbvFormSection}
 
 	{fbvFormSection label="manager.subscriptionTypes.form.format"}
-		{fbvElement type="select" required=true name="format" id="format" value=$format from=$validFormats size=$fbvStyles.size.SMALL translate=false inline=true}
+		{fbvElement type="select" required=true name="format" id="format" selected=$format from=$validFormats size=$fbvStyles.size.SMALL translate=false inline=true}
 	{/fbvFormSection}
 
 	{fbvFormSection label="manager.subscriptionTypes.form.duration"}

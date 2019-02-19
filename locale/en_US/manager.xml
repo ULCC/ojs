@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/manager.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization information: https://pkp.sfu.ca/wiki/index.php?title=Translating_OxS
   * Localization strings.
@@ -110,7 +110,8 @@
 	<message key="manager.sections.wordCountInstructions">Limit abstract word counts for this section (0 for no limit)</message>
 	<message key="manager.setup">Journal Settings</message>
 	<message key="manager.setup.masthead">Masthead</message>
-	<message key="manager.setup.masthead.description">List editors, managing directors, and other individuals associated with the journal.</message>
+	<message key="manager.setup.editorialTeam">Editorial Team</message>
+	<message key="manager.setup.editorialTeam.description">List editors, managing directors, and other individuals associated with the journal.</message>
 	<message key="manager.setup.homepageContent">Journal Homepage Content</message>
 	<message key="manager.setup.homepageContentDescription">The journal homepage consists of navigation links by default. Additional homepage content can be appended by using one or all of the following options, which will appear in the order shown.</message>
 	<message key="manager.setup.layout">Journal Layout</message>

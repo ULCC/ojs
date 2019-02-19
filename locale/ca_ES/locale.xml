@@ -3,8 +3,8 @@
 <!--
   * locale/ca_ES/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Credits: https://pkp.sfu.ca/wiki/index.php?title=OJS:_Catalan_(ca_ES)
@@ -409,7 +409,6 @@
 	<!-- Navigation sidebar menu -->
 
 	<!-- Used by editor in submission review / editing -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[El nom enllaça amb el perfil del revisor/a.<br /> La puntuació és sobre 5 (Excel·lent).<br /> El camp «Setmanes» indica el període de temps mitjà utilitzat per completar una revisió.<br /> El camp «Darrera» indica la data de l’última revisió acceptada.<br /> El camp «Actives» llista les revisions en curs.]]></message>
 
 
 
@@ -500,7 +499,6 @@
 	<!-- Used in submission editing -->
 	<message key="copyeditor.article.fileToCopyedit">Fitxer per corregir</message>
 	<message key="copyeditor.article.copyeditorFile">Fitxer del corrector/a d'originals</message>
-	<message key="copyeditor.article.uploadedFile">Fitxer carregat</message>
 	<message key="copyeditor.article.copyeditorFinalFile">Fitxer del corrector/a d'originals</message>
 
 	<!-- Proofreader -->
@@ -869,8 +867,6 @@
 	<message key="rt.context.authorTermsDescription">Per a les obres amb més d’un autor/a, deixeu tots els noms activats si voleu cercar obres que tinguin la mateixa autoria de manera col·laborativa o bé activeu un sol nom si voleu cercar cada persona una per una. Feu clic a «Sobre la revista» per obtenir més informació sobre el recurs cercat. Aquests recursos han estat seleccionats per la rellevància que tenen i perquè ofereixen accés lliure (gratuït) a tots o part dels continguts.</message>
 
 	<!-- Notification Types -->
-	<message key="notification.mailListDescription">Introduïu el vostre correu electrònic per rebre notificacions immediates del contingut important nou que s'afegeixi a la revista.</message>
-	<message key="notification.notificationsPublicDescription"><![CDATA[  <a href="{$emailUrl}">per correu electrònic.</a>]]></message>
 
 	<message key="notification.type.articleSubmitted">S'ha tramès un nou article: "{$title}".</message>
 	<message key="notification.type.editing">Esdeveniments d'edició</message>

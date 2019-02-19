@@ -4,8 +4,8 @@
 <!--
   * locale/fr_FR/editor.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the fr_FR (Français (France)) locale.
@@ -232,4 +232,10 @@
 	<message key="editor.submission.editorial.finalDraftDescription"><![CDATA[Les versions finales sur cette liste sont transformées par un Réviseur en versions révisées, téléversées dans <span class = "pkp_help_title">Révision</ span>.]]></message>
 	<message key="editor.submission.proof.manageProofFilesDescription">Tous les fichiers qui ont déjà été téléversés à n'importe quelle étape de soumission peuvent être ajoutés à la liste de vérification des épreuves en cochant la case "Inclure" ci-dessous et en cliquant sur "Rechercher". Tous les fichiers disponibles seront répertoriés et pourront être sélectionnés pour inclusion.</message>
 	<message key="editor.publicIdentificationExistsForTheSameType">Le public identifié comme '{$publicIdentifier}' existe déjà pour un autre objet de même type. Veuillez indiquer un public unique pour l'objet de même type à l'intérieur de votre revue.</message>
+        <message key="editor.submission.printReviews">Imprimer les rapports</message>
+        <message key="editor.submission.submissionSummary">Récapitulatif Article</message>
+        
+	<message key="editor.article.coverImage">Image de la page couverture</message>
+	<message key="editor.issues.confirmSetCurrentIssue">Etes-vous sûr de vouloir définir ce volume comme étant le courant ?</message>
+	<message key="grid.action.setCurrentIssue">Définir le volume courant</message>
 </locale>

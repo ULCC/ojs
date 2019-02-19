@@ -4,8 +4,8 @@
 <!--
   * locale/it_IT/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -456,11 +456,6 @@ Seleziona un modello per gestire questi aspetti del processo editoriale. (Per de
 	<!-- Navigation sidebar menu -->
 
 	<!-- Used by editor in submission review / editing -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[Il nome porta al profilo del revisore.<br/>
-Il giudizio arriva fino a 5 (Eccellente).<br/>
-Settimane si riferisce al tempo medi di completamente di una revisione.<br/>
-Ultima è la data della revisione accettata più recente.<br/>
-Attive indica quante revisioni sono attualmente in corso.]]></message>
 
 
 
@@ -549,7 +544,6 @@ Attive indica quante revisioni sono attualmente in corso.]]></message>
 	<!-- Used in submission editing -->
 	<message key="copyeditor.article.fileToCopyedit">File al Copyeditor</message>
 	<message key="copyeditor.article.copyeditorFile">File del Copyeditor</message>
-	<message key="copyeditor.article.uploadedFile">File caricato</message>
 	<message key="copyeditor.article.copyeditorFinalFile">File del Copyeditor</message>
 
 	<!-- Proofreader -->
@@ -995,8 +989,6 @@ Il processo di validazione pu&#x00F2; non funzionare sugli URL di ricerca che ri
 
 	<!-- Notification Types -->
 
-	<message key="notification.mailListDescription">Inserisci il tuo indirizzo email per ricevere notifiche delle novità della rivista.</message>
-	<message key="notification.notificationsPublicDescription"><![CDATA[Questa pagina mostra aggiornamenti importanti alla rivista, come avvisi o nuovi fascicoli. Puoi ricevere queste notifiche anche attraverso feed RSS (cliccando sulle immagini a destra o <a href="{$emailUrl}">viae mail.</a>]]></message>
 	<message key="notification.type.articleSubmitted">&#200; stato proposto un nuovo articolo, "{$title}"></message>
 	<message key="notification.type.editing">Eventi modificati</message>
 	<message key="notification.type.editorDecisionComment">La decisione dell'editor su  "{$title}" &#232; stata commentata.</message>

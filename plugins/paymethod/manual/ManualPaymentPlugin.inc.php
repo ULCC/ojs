@@ -3,8 +3,8 @@
 /**
  * @file plugins/paymethod/manual/ManualPaymentPlugin.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ManualPaymentPlugin
@@ -39,11 +39,14 @@ class ManualPaymentPlugin extends PaymethodPlugin {
 	}
 
 	/**
-	 * @copydoc Plugin::register
+	 * @copydoc Plugin::register()
 	 */
-	function register($category, $path) {
-		if (parent::register($category, $path)) {
+	function register($category, $path, $mainContextId = null) {
+		if (parent::register($category, $path, $mainContextId)) {
 			$this->addLocaleData();
+			if ($this->getEnabled($mainContextId)) {
+				$this->_registerTemplateResource();
+			}
 			return true;
 		}
 		return false;
@@ -60,8 +63,7 @@ class ManualPaymentPlugin extends PaymethodPlugin {
 	/**
 	 * @copydoc PaymethodPlugin::isConfigured
 	 */
-	function isConfigured() {
-		$context = $this->getRequest()->getContext();
+	function isConfigured($context) {
 		if (!$context) return false;
 		if ($this->getSetting($context->getId(), 'manualInstructions') == '') return false;
 		return true;
@@ -71,7 +73,7 @@ class ManualPaymentPlugin extends PaymethodPlugin {
 	 * @copydoc PaymethodPlugin::getPaymentForm
 	 */
 	function getPaymentForm($context, $queuedPayment) {
-		if (!$this->isConfigured()) return null;
+		if (!$this->isConfigured($context)) return null;
 
 		AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
 
@@ -102,7 +104,7 @@ class ManualPaymentPlugin extends PaymethodPlugin {
 
 		$queuedPaymentDao = DAORegistry::getDAO('QueuedPaymentDAO');
 		$queuedPayment = $queuedPaymentDao->getById($queuedPaymentId);
-		$ojsPaymentManager = Application::getPaymentManager($context);
+		$paymentManager = Application::getPaymentManager($context);
 		// if the queued payment doesn't exist, redirect away from payments
 		if (!$queuedPayment) $request->redirect(null, 'index');
 
@@ -119,7 +121,7 @@ class ManualPaymentPlugin extends PaymethodPlugin {
 					'contextName' => $context->getLocalizedName(),
 					'userFullName' => $user?$user->getFullName():('(' . __('common.none') . ')'),
 					'userName' => $user?$user->getUsername():('(' . __('common.none') . ')'),
-					'itemName' => $ojsPaymentManager->getPaymentName($queuedPayment),
+					'itemName' => $paymentManager->getPaymentName($queuedPayment),
 					'itemCost' => $queuedPayment->getAmount(),
 					'itemCurrencyCode' => $queuedPayment->getCurrencyCode()
 				));

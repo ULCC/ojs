@@ -7,8 +7,8 @@
 ;
 ; config.TEMPLATE.inc.php
 ;
-; Copyright (c) 2014-2017 Simon Fraser University
-; Copyright (c) 2003-2017 John Willinsky
+; Copyright (c) 2014-2018 Simon Fraser University
+; Copyright (c) 2003-2018 John Willinsky
 ; Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
 ;
 ; OJS Configuration settings.
@@ -114,6 +114,12 @@ enable_minified = On
 ; Provide a unique site ID and OAI base URL to PKP for statistics and security
 ; alert purposes only.
 enable_beacon = On
+
+; Set this to "On" if you would like to only have a single, site-wide Privacy
+; Statement, rather than a separate Privacy Statement for each journal. Setting
+; this to "Off" will allow you to enter a site-wide Privacy Statement as well
+; as separate Privacy Statements for each journal.
+sitewide_privacy_statement = Off
 
 
 ;;;;;;;;;;;;;;;;;;;;;

@@ -3,8 +3,8 @@
 /**
  * @file classes/core/Application.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class Application
@@ -135,8 +135,6 @@ class Application extends PKPApplication {
 			'metadata',
 			'auth',
 			'blocks',
-			'citationLookup',
-			'citationParser',
 			'gateways',
 			'generic',
 			'importexport',
@@ -154,6 +152,14 @@ class Application extends PKPApplication {
 	 */
 	static function getContextDAO() {
 		return DAORegistry::getDAO('JournalDAO');
+	}
+
+	/**
+	 * Get the context settings DAO.
+	 * @return SettingsDAO
+	 */
+	static function getContextSettingsDAO() {
+		return DAORegistry::getDAO('JournalSettingsDAO');
 	}
 
 	/**

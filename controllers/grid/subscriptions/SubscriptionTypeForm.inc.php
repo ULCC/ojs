@@ -3,8 +3,8 @@
 /**
  * @file classes/subscription/form/SubscriptionTypeForm.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SubscriptionTypeForm
@@ -59,7 +59,9 @@ class SubscriptionTypeForm extends Form {
 
 		// Cost	is provided and is numeric and positive
 		$this->addCheck(new FormValidator($this, 'cost', 'required', 'manager.subscriptionTypes.form.costRequired'));
-		$this->addCheck(new FormValidatorCustom($this, 'cost', 'required', 'manager.subscriptionTypes.form.costNumeric', create_function('$cost', 'return (is_numeric($cost) && $cost >= 0);')));
+		$this->addCheck(new FormValidatorCustom($this, 'cost', 'required', 'manager.subscriptionTypes.form.costNumeric', function($cost) {
+			return (is_numeric($cost) && $cost >= 0);
+		}));
 
 		// Currency is provided and is valid value
 		$this->addCheck(new FormValidator($this, 'currency', 'required', 'manager.subscriptionTypes.form.currencyRequired'));
@@ -132,7 +134,9 @@ class SubscriptionTypeForm extends Form {
 	function readInputData() {
 		$this->readUserVars(array('name', 'description', 'cost', 'currency', 'duration', 'format', 'institutional', 'membership', 'disable_public_display'));
 
-		$this->addCheck(new FormValidatorCustom($this, 'duration', 'optional', 'manager.subscriptionTypes.form.durationNumeric', create_function('$duration', 'return (is_numeric($duration) && $duration >= 0);')));
+		$this->addCheck(new FormValidatorCustom($this, 'duration', 'optional', 'manager.subscriptionTypes.form.durationNumeric', function($duration) {
+			return (is_numeric($duration) && $duration >= 0);
+		}));
 	}
 
 	/**

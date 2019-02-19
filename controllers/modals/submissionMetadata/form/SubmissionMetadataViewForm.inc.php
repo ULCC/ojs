@@ -3,8 +3,8 @@
 /**
  * @file controllers/modals/submissionMetadata/form/SubmissionMetadataViewForm.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SubmissionMetadataViewForm
@@ -42,6 +42,11 @@ class SubmissionMetadataViewForm extends PKPSubmissionMetadataViewForm {
 		$sectionOptions = $sectionDao->getTitles($submission->getContextId());
 		$templateMgr->assign('sectionOptions', $sectionOptions);
 		$templateMgr->assign('sectionId', $submission->getSectionId());
+		// get word count of the section
+		$sectionDao = DAORegistry::getDAO('SectionDAO');
+		$section = $sectionDao->getById($submission->getSectionId());
+		$wordCount = $section->getAbstractWordCount();
+		$templateMgr->assign('wordCount', $wordCount);
 
 		// Cover image delete link action
 		$locale = AppLocale::getLocale();

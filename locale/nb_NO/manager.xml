@@ -4,8 +4,8 @@
 <!--
   * locale/nb_NO/manager.xml
   *
-  * Copyright (c) 2014-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2014-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the nb_NO (Norsk bokmål) locale.
@@ -612,7 +612,8 @@
 	<message key="manager.language.submissions">Manuskript</message>
 	<message key="manager.section.noSectionEditors"><![CDATA[Det er ikke oppnevnt en seksjonsredaktør. Tildel denne rollen til minst en bruker under Administrasjon > Innstillinger > Brukere &amp; roller først.]]></message>
 	<message key="manager.setup.masthead">Kolofon</message>
-	<message key="manager.setup.masthead.description">Opprett en liste over redaktører, redaksjonsledere  og andre personer tilknyttet tidsskriftet.</message>
+	<message key="manager.setup.editorialTeam">Redaksjon</message>
+	<message key="manager.setup.editorialTeam.description">Opprett en liste over redaktører, redaksjonsledere  og andre personer tilknyttet tidsskriftet.</message>
 	<message key="manager.setup.homepageContent">Innhold på hjemmesiden</message>
 	<message key="manager.setup.homepageContentDescription">Som standard består hjemmesiden av navigasjonslenker. Ytterligere hjemmesideinnhold kan legges til ved å bruke en eller flere av følgende valgmuligheter, som vil bli vist i den viste rekkefølgen.</message>
 	<message key="manager.setup.layout">Tidsskriftets sideoppsett</message>

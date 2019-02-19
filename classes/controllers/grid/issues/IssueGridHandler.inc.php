@@ -8,8 +8,8 @@
 /**
  * @file controllers/grid/issues/IssueGridHandler.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2000-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2000-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IssueGridHandler
@@ -515,12 +515,6 @@ class IssueGridHandler extends GridHandler {
 					$journalId
 				);
 			}
-			$notificationManager->sendToMailingList($request,
-				$notificationManager->createNotification(
-					$request, UNSUBSCRIBED_USER_NOTIFICATION, NOTIFICATION_TYPE_PUBLISHED_ISSUE,
-					$journalId
-				)
-			);
 		}
 
 		$json = DAO::getDataChangedEvent();

@@ -4,8 +4,8 @@
 <!--
   * locale/eu_ES/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -427,12 +427,6 @@ Nahi baduzu, kontua zergatik desgaitu diozun azal diezaiokezu erabiltzaileari.</
 
 	<!-- Navigation sidebar menu -->
 
-	<!-- Used by editor in submission review / editing -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[Izena ebaluatzailearen profilerako esteka da.<br />
-Balorazio-eskala: 1-5 (Bikaina).<br />
-Asteak: ebaluazioa egiteko batez besteko denbora. <br />
-Azkena: azkeneko onartutako ebaluazioaren data.<br />
-Aktibo: une honetan kontsideratzen edo egiten ari diren ebaluazioen kopurua.]]></message>
 
 
 
@@ -524,7 +518,6 @@ itsatsi ebaluazioko oharrak hemen</message>
 	<!-- Used in submission editing -->
 	<message key="copyeditor.article.fileToCopyedit">Zuzentzeko fitxategia</message>
 	<message key="copyeditor.article.copyeditorFile">Zuzentzailearen fitxategia</message>
-	<message key="copyeditor.article.uploadedFile">Kargatutako fitxategia</message>
 	<message key="copyeditor.article.copyeditorFinalFile">Zuzentzailearen fitxategia</message>
 
 	<!-- Proofreader -->
@@ -1013,8 +1006,6 @@ Balidazioak huts egin dezake bilaketa egiteko inprimaki-datuak bidaltzea eskatze
 	<message key="payment.subscription.purchase">Erosi harpidetza</message>
 	<message key="installer.installApplication">Instalatu Open Journal Systems</message>
 	<message key="installer.upgradeApplication">Bertsio-berritu Open Journal Systems</message>
-	<message key="notification.mailListDescription">Sartu zure helbide eletkronikoa aldizkariari gehitu zaizkion eduki berri garrantzitsuen jakinarazpenak berehala jasotzeko.</message>
-	<message key="notification.notificationsPublicDescription"><![CDATA[Orri honek aldizkariarekin lotutako eguneraketa garrantzitsuak erakusten ditu, hala nola gai edo anuntzio berriak. Jakinarazpen horietan izen-eman dezakezu, bai RSS jarioekin (eskuineko irudietan klik eginez), bai <a href="{$emailUrl}">posta elektronikoz. </a>]]></message>
 	<message key="notification.type.articleSubmitted">Artikulu berri bat, "{$title}", aurkeztu da.</message>
 	<message key="notification.type.editing">Gertaerak editatzen</message>
 	<message key="notification.type.editorDecisionComment">Editoreak erabakitzeko iruzkin bat utzi da "{$title}" artikuluan.</message>

@@ -4,8 +4,8 @@
 <!--
   * locale/nl_NL/locale.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the nl_NL (Nederlands) locale.
@@ -324,11 +324,6 @@ Eventueel kunt u de gebruiker een reden voor het blokkeren geven.</message>
 </ol>]]></message>
 
 	<!-- Used by editor in submission review / editing -->
-	<message key="editor.article.selectReviewerNotes"><![CDATA[De naam is een link naar het profiel van de reviewer.<br />
-Oordeel is van 1 tot  5 (Uitstekend).<br />
-Weken refereert aan de gemiddelde tijdsduur voor een complete review.<br />
-Laatste is de datum van de laatst geaccepteerde review.<br />
-Actief is het aantal reviews die momenteel in overweging of behandeling zijn.]]></message>
 
 	<!-- Section Editor -->
 	<message key="sectionEditor.activeEditorialAssignments">Actieve redactietaken</message>
@@ -414,7 +409,6 @@ Actief is het aantal reviews die momenteel in overweging of behandeling zijn.]]>
 	<!-- Used in submission editing -->
 	<message key="copyeditor.article.fileToCopyedit">Stuur naar tekstredactie</message>
 	<message key="copyeditor.article.copyeditorFile">Bestand voor tekstredacteur</message>
-	<message key="copyeditor.article.uploadedFile">Geladen bestand</message>
 	<message key="copyeditor.article.copyeditorFinalFile">Bestand voor tekstredacteur</message>
 
 	<!-- Proofreader -->
@@ -903,7 +897,6 @@ Validatie kan falen op zoek-url's die formulier-invoer eisen.]]></message>
 	<message key="about.subscriptions.individual">Individuele abonnementen</message>
 	<message key="about.subscriptions.institutional">Institutionele abonnementen</message>
 	<message key="user.subscriptions.form.ipRangeInstructions"><![CDATA[als hier IP reeksen opgegeven worden is het domein optioneel.<br />Geldige waarden zijn een IP adres (bv. 142.58.103.1), IP reeks (bv. 142.58.103.1 - 142.58.103.4), een IP reeks met wildcard '*' (bv. 142.58.*.*), en een IP reeks mets CIDR (e.g. 142.58.100.0/24).]]></message>
-	<message key="notification.mailListDescription">Geef uw e-mail adres op om op de hoogte gesteld te worden van belangrijke nieuwe inhoud van het tijdschrift.</message>
 	<message key="notification.type.editorDecisionComment">Er is een commentaar achtergelaten op de redacteursbeslissing van "{$title}".</message>
 	<message key="notification.type.galleyModified">Een proef van "{$title}" gewijzigd.</message>
 	<message key="notification.type.issuePublished">Er is een nieuw nummer gepubliceerd</message>
@@ -915,7 +908,6 @@ Validatie kan falen op zoek-url's die formulier-invoer eisen.]]></message>
 	<message key="notification.type.submissionComment">Een redacteur heeft "{$title}" van commentaar voorzien.</message>
 	<message key="reviewer.article.reviewGuidelinesDescription">De richtlijnen voor review geven reviewers criteria voor het beoordelen van de geschiktheid van een inzending voor publicatie in het tijdschrift. Ze kunnen instructies bevatten voor het maken een effectief en behulpzaam review. Bij het uitvoeren van een review krijgen reviewers twee tekstvelden, de eerste "voor redacteur en auteur" en de tweede "voor redacteur". De tijdschriftbeheerder kan ook een peer review formulier aanmaken bij revieuwformulieren, In alle gevallen hebben de redacteuren de mogelijkheid om de reviews op te nemen in de correspondentie met de auteur.</message>
 	<message key="notification.type.articleSubmitted">Een nieuw artikel, "{$title}", is ingestuurd.</message>
-	<message key="notification.notificationsPublicDescription"><![CDATA[Deze pagina toont belangrijke berichten over dit tijdschrift zoals nieuwe nummers of nieuwsberichten. U kunt zich op deze berichten abonneren via RSS feeds (door op de afbeeldingen rechts te klikken) of   <a href="{$emailUrl}">via e-mail.</a>]]></message>
 	<message key="notification.type.editing">Redactieberichten</message>
 	<message key="notification.type.userComment">Een lezer heeft een opmerking geplaatst bij "{$title}"</message>
 	<message key="user.subscriptions.subscriptionStatus">Abonnementsstatus</message>

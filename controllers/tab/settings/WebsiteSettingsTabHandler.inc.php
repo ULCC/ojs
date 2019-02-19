@@ -3,8 +3,8 @@
 /**
  * @file controllers/tab/settings/WebsiteSettingsTabHandler.inc.php
  *
- * Copyright (c) 2014-2017 Simon Fraser University
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2018 Simon Fraser University
+ * Copyright (c) 2003-2018 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class WebsiteSettingsTabHandler
@@ -174,17 +174,8 @@ class WebsiteSettingsTabHandler extends ManagerSettingsTabHandler {
 		}
 
 		$journal = $request->getJournal();
-		$journalSettingsDao = DAORegistry::getDAO('JournalSettingsDAO');
-		$journalSettingsDao->reloadLocalizedDefaultSettings(
-			$journal->getId(), 'registry/journalSettings.xml',
-			array(
-				'indexUrl' => $request->getIndexUrl(),
-				'journalPath' => $journal->getData('path'),
-				'primaryLocale' => $journal->getPrimaryLocale(),
-				'journalName' => $journal->getName($journal->getPrimaryLocale())
-			),
-			$locale
-		);
+		$settingsDao = Application::getContextSettingsDAO();
+		$settingsDao->reloadLocalizedDefaultContextSettings($request, $locale);
 
 		// also reload the user group localizable data
 		$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
